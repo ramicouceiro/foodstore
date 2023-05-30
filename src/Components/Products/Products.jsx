@@ -13,14 +13,14 @@ import ProductCard from "./ProductCard";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("Pizzas");
-  const getMovies = async () => {
+  const getProducts = async () => {
     await axios.get(`./food/${category}.json`).then((res) => {
       setProducts(res.data);
     });
   };
 
   useEffect(() => {
-    getMovies();
+    getProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
