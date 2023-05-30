@@ -4,7 +4,7 @@ import Menu from "../pages/Menu/Menu.jsx";
 function Routes() {
   return (
     <ReactDomRoutes>
-      <Route path='/menu' element={<Menu />} />
+      <Route path='/' element={<Menu />} />
     </ReactDomRoutes>
   );
 }
