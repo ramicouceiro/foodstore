@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useState } from "react";
 import {
   CategoryBtn,
@@ -7,7 +6,6 @@ import {
   Productscontainer,
   CategoryTitle,
 } from "./ProductsStyles";
-import axios from "axios";
 import ProductCard from "./ProductCard";
 import pizzas from "../../food/pizzas.json";
 import breads from "../../food/breads.json";

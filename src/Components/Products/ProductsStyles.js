@@ -59,10 +59,21 @@ export const MenuSection = styled.section`
 export const CategoryContainer = styled.div`
   display: flex;
   gap: 1rem;
+  padding: 1rem;
+
+  @media screen and (max-width: 1500px) {
+    overflow-x: scroll;
+    width: 100%;
+    ::-webkit-scrollbar {
+      margin-top: 1rem;
+      height: 5px;
+    }
+  }
 `;
 
 export const CategoryBtn = styled.div`
-  background: var(--category-color);
+  background-color: ${(props) =>
+    props.active ? "var(--btn-hover)" : "var(--category-color)"};
   color: var(--text-color);
   padding: 0.5rem 1rem;
   display: flex;

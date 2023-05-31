@@ -30,9 +30,21 @@ const Cart = () => {
                 <h2>{product.name}</h2>
                 <p>${product.price}</p>
                 <span>
-                  <button>-</button>
-                  <span>1</span>
-                  <button>+</button>
+                  <button
+                    onClick={() => {
+                      dispatch({ type: "REMOVE_FROM_CART", payload: product });
+                    }}
+                  >
+                    -
+                  </button>
+                  <span>{product.quantity}</span>
+                  <button
+                    onClick={() => {
+                      dispatch({ type: "ADD_TO_CART", payload: product });
+                    }}
+                  >
+                    +
+                  </button>
                 </span>
               </div>
               <AiOutlineEdit />
@@ -40,15 +52,15 @@ const Cart = () => {
           );
         })}
       </CartItems>
-      <h2>Total: ${state.reduce((acc, product) => acc + product.price, 0)}</h2>
+      <h2>
+        Total: $
+        {state.reduce(
+          (acc, product) => acc + product.price * product.quantity,
+          0
+        )}
+      </h2>
       <PlaceOrder>
-        <button
-          onClick={() => {
-            dispatch({ type: "CLEAR_CART" });
-          }}
-        >
-          Place order
-        </button>
+        <button>Place order</button>
       </PlaceOrder>
       <ClearCart>
         <button

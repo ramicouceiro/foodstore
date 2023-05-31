@@ -5,16 +5,28 @@ export const Context = (props) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "ADD_TO_CART":
-        const tempsate = state.filter((item) => item.id === action.payload.id);
-        if (tempsate.length > 0) {
-          return state;
+        const isInCart = state.find((item) => item.id === action.payload.id);
+        if (isInCart) {
+          return state.map((item) => {
+            if (item.id === action.payload.id) {
+              return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+          });
         } else {
-          console.log(...state, action.payload);
-          return [...state, action.payload];
+          return [...state, { ...action.payload, quantity: 1 }];
         }
       case "REMOVE_FROM_CART":
-        break;
-
+        if (action.payload.quantity > 1) {
+          return state.map((item) => {
+            if (item.id === action.payload.id) {
+              return { ...item, quantity: item.quantity - 1 };
+            }
+            return item;
+          });
+        } else {
+          return state.filter((item) => item.id !== action.payload.id);
+        }
       case "CLEAR_CART":
         return [];
       default:
