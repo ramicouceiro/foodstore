@@ -42,6 +42,7 @@ export const CartItems = styled.div`
   overflow-y: scroll;
   height: 100%;
   max-height: 70vh;
+  padding-right: 1rem;
 `;
 
 export const CartProduct = styled.div`
@@ -51,9 +52,11 @@ export const CartProduct = styled.div`
   min-height: 150px;
   border-bottom: 1px solid var(--page-btn-color);
   img {
-    width: 40px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 10px;
+    align-self: flex-start;
+    margin-top: 10%;
   }
   h2 {
     font-size: 1rem;
@@ -69,13 +72,21 @@ export const CartProduct = styled.div`
   }
 
   span > button {
+    scale: 1.2;
     width: 20px;
     height: 20px;
     border-radius: 5px;
     border: none;
-    background-color: var(--btn-color);
+    background-color: var(--category-color);
     cursor: pointer;
-    color: white;
+    font-family: var(--font);
+    font-weight: var(--bold);
+    font-size: 1rem;
+    :hover {
+      transition: 250ms;
+      background: var(--btn-hover);
+      scale: 1.3;
+    }
   }
 
   span > button:nth-child(1) {

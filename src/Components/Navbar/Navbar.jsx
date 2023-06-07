@@ -7,17 +7,14 @@ import {
   AiFillBook,
 } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
-import { MdModeNight } from "react-icons/md";
-
+import ThemeTogglerBtn from "../ThemeToggler/ThemeTogglerBtn";
 import {
   LinkContainerStyled,
   LinksContainerStyled,
   NavbarContainerStyled,
 } from "./NavbarStyles";
+
 const Navbar = () => {
-  const themeToggler = () => {
-    document.body.classList.toggle("dark-theme-varaibles");
-  };
   return (
     <>
       <NavbarContainerStyled>
@@ -58,7 +55,7 @@ const Navbar = () => {
               Alert
             </LinkContainerStyled>
           </Link>
-          <MdModeNight onClick={themeToggler} className='theme-toggler' />
+          <ThemeTogglerBtn />
         </LinksContainerStyled>
       </NavbarContainerStyled>
     </>

@@ -26,10 +26,10 @@ export const Product = styled.div`
   img {
     width: 100%;
     margin-bottom: 1rem;
-    border-radius: 10px;
+    border-radius: 30px;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0;
     color: var(--text-color);
     font-weight: var(--bold);
@@ -108,6 +108,7 @@ export const ProductCartIcon = styled.div`
     scale: 1.1;
   }
   .cartIcon {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-right: 0.1rem;
   }
 `;
